@@ -8,7 +8,7 @@ data_directory = 'D:\connectome\tfMRI_social';
 
 %% to make everything subject specific
 
-for subject = 1:68
+for subject = 2
     
     
     
@@ -16,15 +16,15 @@ for subject = 1:68
     
     matlabbatch{1}.spm.stats.con.spmmat(1) = {SPM_filename};
     
-    matlabbatch{1}.spm.stats.con.consess{1}.tcon.name = 'All motion';
+    matlabbatch{1}.spm.stats.con.consess{1}.tcon.name = 'All_motion';
     matlabbatch{1}.spm.stats.con.consess{1}.tcon.weights = [1];
     matlabbatch{1}.spm.stats.con.consess{1}.tcon.sessrep = 'both';
     
-    matlabbatch{1}.spm.stats.con.consess{2}.tcon.name = 'Mental>Rnd';
+    matlabbatch{1}.spm.stats.con.consess{2}.tcon.name = 'Mental_over_Rnd';
     matlabbatch{1}.spm.stats.con.consess{2}.tcon.weights = [0 1];
     matlabbatch{1}.spm.stats.con.consess{2}.tcon.sessrep = 'both';
     
-    matlabbatch{1}.spm.stats.con.consess{3}.tcon.name = 'Rnd>Mental';
+    matlabbatch{1}.spm.stats.con.consess{3}.tcon.name = 'Rnd_over_Mental';
     matlabbatch{1}.spm.stats.con.consess{3}.tcon.weights = [0 -1];
     matlabbatch{1}.spm.stats.con.consess{3}.tcon.sessrep = 'both';
     
