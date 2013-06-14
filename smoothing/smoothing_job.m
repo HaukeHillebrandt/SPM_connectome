@@ -1,9 +1,5 @@
-%-----------------------------------------------------------------------
-% Job saved on 10-Mar-2013 22:36:37 by cfg_util (rev $Rev: 4972 $)
-% spm SPM - SPM12b (beta)
-% cfg_basicio BasicIO - Unknown
-% SMOOTHING ALL FILES
-%-----------------------------------------------------------------------
+% SMOOTH functional files
+
 clear all
 
 data_directory = 'D:\connectome\tfMRI_social'

@@ -8,7 +8,7 @@ data_directory = 'D:\connectome\tfMRI_social';
 
 %% to make everything subject specific
 
-for subject = 2
+for subject = 1:68
     
     
     
@@ -28,7 +28,15 @@ for subject = 2
     matlabbatch{1}.spm.stats.con.consess{3}.tcon.weights = [0 -1];
     matlabbatch{1}.spm.stats.con.consess{3}.tcon.sessrep = 'both';
     
-    matlabbatch{1}.spm.stats.con.delete = 1;
+    matlabbatch{1}.spm.stats.con.consess{4}.fcon.name = 'Effects of interest';
+    matlabbatch{1}.spm.stats.con.consess{4}.fcon.convec = {
+        [1 0
+        0 1]
+        }';
+    
+    matlabbatch{1}.spm.stats.con.consess{4}.fcon.sessrep = 'both';
+    
+    matlabbatch{1}.spm.stats.con.delete = 0;
     
    
     
