@@ -1,6 +1,3 @@
-%-----------------------------------------------------------------------
-% Job configuration created by cfg_util (rev $Rev: 4252 $)
-%-----------------------------------------------------------------------
 clc
 clear all
 
@@ -20,7 +17,7 @@ data_directory = 'D:\connectome\tfMRI_social'
 cd(data_directory);
 dir_var = dir;
 
-for s = 1:68
+for s = 1:length(subject_dirs)
     
     % Create subject specific directories
     

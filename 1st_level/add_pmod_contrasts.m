@@ -5,10 +5,7 @@ data_directory = 'D:\connectome\tfMRI_social';
 
 [files,subject_dirs] = spm_select('ExtFPList',data_directory,'dummy.xxx');
 
-
-%% to make everything subject specific
-
-for subject = 1:68
+for subject = 96:length(subject_dirs)
     
     
     
@@ -36,7 +33,7 @@ for subject = 1:68
     
     matlabbatch{1}.spm.stats.con.consess{4}.fcon.sessrep = 'both';
     
-    matlabbatch{1}.spm.stats.con.delete = 0;
+    matlabbatch{1}.spm.stats.con.delete = 1;
     
    
     

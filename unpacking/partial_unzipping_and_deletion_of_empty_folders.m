@@ -15,7 +15,7 @@ cd(data_directory)
 unzip_and_recycle(zip_files)
 
 %% gunzips all gz t-fmri files and recycles the gz file
-[fMRI_SOCIAL_RL_gz_files] = spm_select('FPListRec',data_directory,'tfMRI_SOCIAL_RL.nii.gz');
+[tfMRI_SOCIAL_RL_gz_files] = spm_select('FPListRec',data_directory,'tfMRI_SOCIAL_RL.nii.gz');
 
 gunzip_and_recycle(tfMRI_SOCIAL_RL_gz_files)
 

@@ -10,21 +10,21 @@ q = 0;
 
 region.name = []
 region.coordinate = []
+% 
+% region.name{end+1} = 'RV1';
+% region.coordinate{end+1} = [16 -92 -2];
 
-region.name{end+1} = 'RV1';
-region.coordinate{end+1} = [16 -92 -2];
-
-region.name{end+1} = 'RV3';
+region.name{end+1} = 'LV5';
 region.coordinate{end+1} = [32 -90 -2];
 
-region.name{end+1} = 'rpSTS';
+region.name{end+1} = 'lpSTS';
 region.coordinate{end+1} = [60 -42 26];
 
 % region.name{end+1} = 'RAMY';
 % region.coordinate{end+1} = [24 0 -16];
 
-region.name{end+1} = 'R45';
-region.coordinate{end+1} = [48 28 -2];
+% region.name{end+1} = 'R45';
+% region.coordinate{end+1} = [48 28 -2];
 
 
 
@@ -35,7 +35,7 @@ for region_no = 2:length(region.name)
     else start_contrast = 6;
     end
     
-    for subject = 1:68
+    for subject = 1:length(subject_dirs)
         
         for session = 1:2
             try
