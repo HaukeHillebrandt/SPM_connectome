@@ -69,6 +69,8 @@ region.coordinate{end+1} = [-56 -52 10];
 
 region.no = length(region.name);
 
+region.no = length(region.name);
+
 %% Model 1
 model = 3;
 
@@ -76,7 +78,7 @@ model = 3;
 dummy_DCM = sprintf('DCM_dummy%0.1d.mat', model);
 load(dummy_DCM)
 
-model = 3;
+model = 7;
 
 DCM.a = [];
 DCM.b = [];
@@ -89,9 +91,12 @@ DCM.a = [eye(region.no) + diag(ones(1,(region.no-1)),1) + diag(ones(1,(region.no
 
 DCM.b(:,:,1) = (zeros(region.no)); % All motion modulates nothing
 
-DCM.b(:,:,2) = (DCM.a + (eye(region.no)*-1)); % random modulates everything, but self-connections
+% DCM.b(:,:,2) = (DCM.a + (eye(region.no)*-1)); % random modulates everything, but self-connections
+DCM.b(:,:,2) = DCM.a;
 
-DCM.c = [[ones(1,1), zeros(1,1)]; zeros(region.no-1,2)]; %input into V1
+DCM.c =  [[ones(1,2); zeros(region.no-1,2)]]; %input into V5 and pSTS
+
+% DCM.c = [[ones(1,1), zeros(1,1)]; zeros(region.no-1,2)]; %input into V5
 % DCM.c(:,2) = [0 0 1]'
 
 DCM.options.nonlinear = 0;
@@ -124,9 +129,9 @@ save(master_DCM, 'DCM');
 
 %% to make everything subject specific
 
-for session = 1
+for session = 1:2
     
-    for subject = 1:5
+    for subject = 1:length(subject_dirs)
         
         try
             DCM_filename = sprintf('%s\\social_results\\smoothed_pmod\\DCM_%0.1d_sess%d.mat',subject_dirs(subject,:), model, session);
