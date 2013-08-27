@@ -1,2 +1,0 @@
-build_DCM_public_model_2_R
-build_DCM_public_model_3_L
